@@ -1,0 +1,81 @@
+<!--MODAL-->
+<div>
+    <div class="carrito-contenedor">
+        <button class="btn-success btn-carrito" data-bs-toggle="modal" data-bs-target="#modal-carrito">
+            <i class="bi bi-cart-fill"></i> Carrito
+        </button>
+    </div>
+
+    <div  class="modal fade" id="modal-carrito" data-bs-backdrop="static" >
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Carrito</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <ul class="list-group">
+                        <ng-container *ngFor="let product of carrito">
+                            <li class="list-group-item">
+                                <div class="lista-contenedor-carrito">
+                                    <div>
+                                        <img [src]="product.img" alt="" width="80px">
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title text-truncate mb-0">{{product.nombre}}</h5>
+                                        <p class="card-text text-truncate mb-1">{{product.descripcion}}</p>
+                                        <p class="mb-2 fw-bold text-success">$ {{product.precio}}</p>
+                                    </div> 
+                                </div>   
+                            </li>
+                        </ng-container>
+                        
+                       
+                        <li class="list-group-item">
+                            <div class="lista-contenedor-carrito">
+                                <div><h5>Total</h5></div>
+                                <div><h5>$</h5></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-success">Iniciar Compra</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--CONTENEDOR PRINCIPAL-->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="p-2 mt-0 text-center">Productos Destacados</h3>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+        <ng-container *ngFor="let prod of productos">
+            <div class="col mb-1">
+                <div class="card m-3 mx-auto" style="width: 18rem;">
+                    <img [src]="prod.img" class="card-img-top" alt="{{ prod.nombre }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate mb-0">{{prod.nombre}}</h5>
+                        <p class="card-text text-truncate mb-1">{{prod.descripcion}}</p>
+                        <p class="mb-2 fw-bold text-success">$ {{prod.precio}}</p>
+                        <button class="btn btn bg-success text-light" (click)="agregarProducto(prod._id)"><i class="bi bi-bag-heart"></i> Agregar</button>
+                        <!--div class="btn-agregar-carrito">
+                            <a href="#" class="btn-cards" (click)="agregar()"><i class="bi bi-bag-heart"></i>  Agregar</a>
+                        </div-->
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

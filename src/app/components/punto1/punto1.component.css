@@ -1,0 +1,52 @@
+.card{
+    border-radius: 0;;
+}
+.btn-cards{
+    border-radius: 2px;
+    width: 100%;
+    border: solid 1px #df80ff;
+    background-color: #df80ff;
+    color: white;
+    padding: 4px;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+.btn-cards:hover{
+    background-color: white;
+    color: black;
+}
+
+.btn-agregar-carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.i{
+    color: black;
+}
+
+.carrito-contenedor{
+    display: flex;
+    justify-content: end;
+}
+.btn-carrito{
+    background-color: #009933;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    margin-top:5px;
+    margin-right: 10px;
+    padding: 7px;
+}
+.btn-carrito:hover{
+    border:solid 1px #009933;
+    background-color: white;
+    color: black
+}
+.lista-contenedor-carrito{
+    display: flex;
+}
