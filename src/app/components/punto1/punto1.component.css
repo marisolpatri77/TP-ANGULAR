@@ -1,7 +1,7 @@
 .card{
     border-radius: 0;;
 }
-.btn-cards{
+.boton-agregar-carrito{
     border-radius: 2px;
     width: 100%;
     border: solid 1px #df80ff;
@@ -14,16 +14,11 @@
 a{
     text-decoration: none;
 }
-.btn-cards:hover{
+.boton-agregar-carrito:hover{
     background-color: white;
     color: black;
 }
 
-.btn-agregar-carrito{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .i{
     color: black;
@@ -49,4 +44,17 @@ a{
 }
 .lista-contenedor-carrito{
     display: flex;
+}
+
+.lista-carrito-detalle{
+    margin-left: 100px;
+    padding: 1px;
+    align-items: center;
+}
+.cont-total{
+    width: 80px;
+    text-align: center;
+}
+.cont-precio{
+    margin-left: 100px;
 }

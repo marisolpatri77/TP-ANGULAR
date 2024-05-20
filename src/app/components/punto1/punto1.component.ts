@@ -34,4 +34,12 @@ export class Punto1Component {
       this.carrito.push(producto);
     }
   }
+
+  calcularTotal(){
+    let total = 0;
+    for (let i = 0; i < this.carrito.length; i++){
+      total += this.carrito[i].precio;
+    }
+    return total;
+  }
 }

@@ -10,7 +10,7 @@
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Carrito</h5>
+                    <h5 class="modal-title"><i class="bi bi-bag-heart"></i> Mi Carrito</h5>
                     <button class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -22,10 +22,10 @@
                                     <div>
                                         <img [src]="product.img" alt="" width="80px">
                                     </div>
-                                    <div>
+                                    <div class="lista-carrito-detalle">
                                         <h5 class="card-title text-truncate mb-0">{{product.nombre}}</h5>
                                         <p class="card-text text-truncate mb-1">{{product.descripcion}}</p>
-                                        <p class="mb-2 fw-bold text-success">$ {{product.precio}}</p>
+                                        <p class="mb-2 fw-bold">$ {{product.precio}}</p>
                                     </div> 
                                 </div>   
                             </li>
@@ -34,8 +34,12 @@
                        
                         <li class="list-group-item">
                             <div class="lista-contenedor-carrito">
-                                <div><h5>Total</h5></div>
-                                <div><h5>$</h5></div>
+                                <div class="p-2 cont-total">
+                                    <h5>Total</h5>
+                                </div>
+                                <div class="p-2 cont-precio">
+                                    <h5>$ {{ calcularTotal() }}</h5>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -69,10 +73,7 @@
                         <h5 class="card-title text-truncate mb-0">{{prod.nombre}}</h5>
                         <p class="card-text text-truncate mb-1">{{prod.descripcion}}</p>
                         <p class="mb-2 fw-bold text-success">$ {{prod.precio}}</p>
-                        <button class="btn btn bg-success text-light" (click)="agregarProducto(prod._id)"><i class="bi bi-bag-heart"></i> Agregar</button>
-                        <!--div class="btn-agregar-carrito">
-                            <a href="#" class="btn-cards" (click)="agregar()"><i class="bi bi-bag-heart"></i>  Agregar</a>
-                        </div-->
+                        <button class="boton-agregar-carrito" (click)="agregarProducto(prod._id)"><i class="bi bi-bag-heart"></i> Agregar</button>
                     </div>
                 </div>
             </div>

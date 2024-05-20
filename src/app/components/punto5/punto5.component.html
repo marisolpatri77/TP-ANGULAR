@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-end m-2">
+    <button type="button" class="btn btn-danger" (click)="irResumen()">Ir a Resumen</button>
+</div>
+<div class="container w-75 mb-5">
+    <div>
+        <h2 class="mt-4 mb-3 text-center">Formulario de Venta</h2>
+    </div>
+    <form class="p-2">
+        <div class="mb-3">
+          <label for="dni" class="form-label">Ingrese DNI:</label>
+          <input type="text" class="form-control" id="dni" name="dni" [(ngModel)]="ticket.dni">
+        </div>
+
+        <div class="mb-3">
+            <label for="precio-real" class="form-label">Precio Real:</label>
+            <input type="text" class="form-control" id="precio-real" name="precioReal" [(ngModel)]="ticket.precioReal">
+        </div>
+        
+        <div class="mb-3">
+            <label for="tipo-expectador" class="form-label">Tipo de Espectador:</label>
+            <select id="tipo-expectador" class="form-select" name="tipoEspectador" [(ngModel)]="ticket.tipoEspectador"  (change)="calcularDescuento(ticket.tipoEspectador)">
+                <!--option selected >Seleccione una opción</option-->
+                <option value="l">Local</option>
+                <option value="e">Extranjero</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="fecha" class="form-label">Ingrese Fecha:</label>
+            <input type="date" class="form-control" id="fecha" name="fechaCobro" [(ngModel)]="ticket.fechaCobro">
+        </div>
+        <div class="mb-3">
+            <label for="precio-cobrado" class="form-label">Precio Cobrado:</label>
+            <input type="text" class="form-control" id="precio-cobrado" name="precioCobrado" [(ngModel)]="ticket.precioCobrado">
+        </div>
+        <div class="mt-4 d-flex justify-content-center">
+            <button type="submit" class="btn btn-success" (click)="registrar()">Registrar</button>
+        </div>
+    </form>
+</div>
+

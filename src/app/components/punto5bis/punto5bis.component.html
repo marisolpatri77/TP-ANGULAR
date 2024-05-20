@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-primary m-2" (click)="irFormulario()">Ir al Formulario de Ventas</button>
+</div>
+<div class="container">
+    <div class="m-3">
+        <h2 class="text-center">Ventas Concretadas</h2>
+    </div>
+    <div class="mb-3 p-3">
+        <table class="table">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">Id</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Precio Real</th>
+                <th scope="col">Tipo Espectador</th>
+                <th scope="col">Fecha Venta</th>
+                <th scope="col">Precio Cobrado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-center" *ngFor="let tv of ticketsVendidos">
+                <td>{{tv.id}}</td>
+                <td>{{tv.dni}}</td>
+                <td>$ {{tv.precioReal}}</td>
+                <td>{{tv.tipoEspectador}}</td>
+                <td>{{tv.fechaCobro}}</td>
+                <td>$ {{tv.precioCobrado}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+
+<!--div class="container mt-4">
+  <div>
+    <h2 class="text-center m-2">Resumen Ventas</h2>
+  </div>
+</div-->
